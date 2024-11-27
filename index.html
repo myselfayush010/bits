@@ -4,90 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BITS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        header, main, section, a {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            transform: translateZ(0);
-            border-radius: 10px;
-            margin: 1rem 0;
-        }
-
-        header {
-            background-color: #0d9af1;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-            width: 100%;
-        }
-
-        .event-section {
-            background-color: #ffeb3b;
-            color: #000;
-            padding: 1rem;
-            text-align: center;
-            width: 100%;
-        }
-
-        .countdown {
-            background-color: #ff5722;
-            color: #000000;
-            padding: 1rem;
-            text-align: center;
-            width: 100%;
-        }
-
-        .countdown h2 {
-            margin: 0;
-        }
-
-        .countdown p {
-            font-size: 1.5rem;
-            margin: 0.5rem 0 0;
-        }
-    </style>
-</head>
-<body>
-    <section class="countdown">
-        <h2>Countdown for Term 1</h2>
-        <section><p id="countdown-timer">Loading...</p></section>
-    </section>
-    <script>
-        function countdown(date) {
-            const countDownDate = new Date(date).getTime();
-            const countdownElement = document.getElementById('countdown-timer');
-
-            const updateCountdown = setInterval(() => {
-                const now = new Date().getTime();
-                const distance = countDownDate - now;
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-                if (distance < 0) {
-                    clearInterval(updateCountdown);
-                    countdownElement.innerHTML = "EXAM TIME!";
-                }
-            }, 1000);
-        }
-
-        countdown('October 25, 2024 00:00:00');
-    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -227,38 +146,114 @@
     </style>
 </head>
 <body>
-    <section id="links">
-        <h2>Study Material</h2>
-        <ul>
-            <li><a href="https://drive.google.com/drive/folders/12KVewJgtM6UOUMFt9LEfGJ31MZm341Rr?usp=drive_link" target="_blank">orientation</a></li>
-            <li><a href="https://drive.google.com/drive/folders/1-NFYnjR9nTOKtk7I-5-1fEKaklv34buP?usp=sharing" target="_blank">semester 1</a></li>
-            <li><a href="https://drive.google.com/drive/folders/12P3xWmCQFDcgbjMfVGAu2-A0-IRTNliq?usp=sharing" target="_blank">semester 2</a></li>
-        </ul>
-    </section>
-    <section id="links">
-        <h2>Resources</h2>
-        <ul>
-            <li><a href="https://drive.google.com/drive/folders/104XpBBhDSUrwJq90zcKOn70PAWkLRyKb?usp=sharing" target="_blank">भगवद गीता</a></li>
-            <li><a href="https://wondrium.pages.dev/" target="_blank">Wondrium - learn anything</a></li>
-            <li><a href="https://docs.google.com/document/d/1GRBV1uWgWRHUHtzqltaVCr4VvgafY2ff2gBzHDk3xC4/edit?usp=sharing" target="_blank">Linkedin Learning Library Card</a></li>
-        </ul>
-    </section>
-    <section id="social-media">
-        <h2>Students Community</h2>
-        <ul>
-            <li><a href="https://wa.me/916202972273" target="_blank">WhatsApp Community request to verify and join</a></li>
-            <li><a href="https://discord.gg/j99vNpfhgg" target="_blank">Discord Community</a></li>
-            <li><a href="https://www.reddit.com/r/bitscs/" target="_blank">FAQ Reddit</a></li>
-            <li><a href="https://discord.gg/ZBvUexVYNU" target="_blank">SENIOR discord Community</a></li>
-        </ul>
-    </section>
-    <section id="links">
-        <h2>Google Drive Links</h2>
-        <ul>
-            <li><a href="https://drive.google.com/drive/u/0/folders/18y6g7F-cLr3Sk00sXoPaRpToAWcSzkmu" target="_blank">google drive resource by unknown</a></li>
-            <li><a href="https://drive.google.com/drive/folders/1n1A4fZOGSauN6WKygiyU_jOOML0Lp12e" target="_blank">google drive resource by sadiq</a></li>
-        </ul>
-    </section>
-</main>
+    <nav>
+        <div class="container nav-content">
+            <div class="nav-links">
+                <a href="#links">Study Material</a>
+                <a href="#social-media">Community</a>
+                <a href="#google-drive-links">Resources</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="links" class="section fade-in">
+            <h2>Study Material</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <a href="https://drive.google.com/drive/folders/12KVewJgtM6UOUMFt9LEfGJ31MZm341Rr?usp=drive_link" target="_blank">
+                        <i class="fas fa-book-open"></i>
+                        <span>Orientation</span>
+                    </a>
+                </div>
+                <div class="link-card">
+                    <a href="https://drive.google.com/drive/folders/1-NFYnjR9nTOKtk7I-5-1fEKaklv34buP?usp=sharing" target="_blank">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Semester 1</span>
+                    </a>
+                </div>
+                <div class="link-card">
+                    <a href="https://drive.google.com/drive/folders/12P3xWmCQFDcgbjMfVGAu2-A0-IRTNliq?usp=sharing" target="_blank">
+                        <i class="fas fa-book"></i>
+                        <span>Semester 2</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="section fade-in">
+            <h2>Resources</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <a href="https://drive.google.com/drive/folders/104XpBBhDSUrwJq90zcKOn70PAWkLRyKb?usp=sharing" target="_blank">
+                        <i class="fas fa-book"></i>
+                        <span>भगवद गीता</span>
+                    </a>
+                </div>
+                <div class="link-card">
+                    <a href="https://wondrium.pages.dev/" target="_blank">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Wondrium - learn anything</span>
+                    </a>
+                </div>
+                <div class="link-card">
+                    <a href="https://docs.google.com/document/d/1GRBV1uWgWRHUHtzqltaVCr4VvgafY2ff2gBzHDk3xC4/edit?usp=sharing" target="_blank">
+                        <i class="fas fa-id-card"></i>
+                        <span>Linkedin Learning Library Card</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="social-media" class="section fade-in">
+            <h2>Students Community</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <a href="https://wa.me/916202972273" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp Community</span>
+                    </a>
+                </div>
+                <div class="link-card">
+                    <a href="https://discord.gg/j99vNpfhgg" target="_blank">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord Community</span>
+                    </a>
+                </div>
+                <div class="link-card">
+                    <a href="https://www.reddit.com/r/bitscs/" target="_blank">
+                        <i class="fab fa-reddit"></i>
+                        <span>FAQ Reddit</span>
+                    </a>
+                </div>
+                <div class="link-card">
+                    <a href="https://discord.gg/ZBvUexVYNU" target="_blank">
+                        <i class="fab fa-discord"></i>
+                        <span>SENIOR Discord</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="google-drive-links" class="section fade-in">
+            <h2>Google Drive Links</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <a href="https://drive.google.com/drive/u/0/folders/18y6g7F-cLr3Sk00sXoPaRpToAWcSzkmu" target="_blank">
+                        <i class="fab fa-google-drive"></i>
+                        <span>Resource by Unknown</span>
+                    </a>
+                </div>
+                <div class="link-card">
+                    <a href="https://drive.google.com/drive/folders/1n1A4fZOGSauN6WKygiyU_jOOML0Lp12e" target="_blank">
+                        <i class="fab fa-google-drive"></i>
+                        <span>Resource by Sadiq</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
